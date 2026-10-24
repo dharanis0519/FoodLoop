@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FoodLoop | Good food. Shared good.</title>
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark">↻</span> foodloop<span class="brand-dot">.</span></a>
+  <nav><a href="#discover">Discover food</a><a href="#how">How it works</a><a href="#impact">Our impact</a></nav>
+  <button class="btn btn-dark" id="openDonateTop">+ Donate food</button>
+</header>
+<main>
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow"><span class="live-dot"></span> FOOD RESCUE, MADE SIMPLE</div>
+    <h1>Good food deserves<br><em>a second chance.</em></h1>
+    <p class="hero-text">Connect surplus food with people who need it. One simple donation can make someone's day a little brighter.</p>
+    <div class="hero-actions"><button class="btn btn-green" id="browseBtn">Find food nearby <span>↗</span></button><button class="btn btn-light" id="openDonateHero">I have food to share</button></div>
+    <div class="hero-proof"><div class="avatar-stack"><span>🥗</span><span>🍞</span><span>🍎</span></div><div><strong id="heroCount">3 donations</strong><small>ready to make a difference</small></div></div>
+  </div>
+  <div class="hero-art">
+    <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+    <div class="food-card card-main"><div class="food-emoji">🥗</div><div class="art-label">TODAY'S LITTLE WIN</div><h3>Fresh food.<br>Less waste.</h3><p>Every meal shared matters.</p><div class="card-stats"><span>♧ Community first</span><span>✦ Waste less</span></div></div>
+    <div class="floating-note note-top"><span>🌱</span><div><strong>Small acts,</strong><small>big impact</small></div></div>
+    <div class="floating-note note-bottom"><span class="check-bubble">✓</span><div><strong>Food rescued</strong><small>starts with you</small></div></div>
+    <div class="leaf leaf-one">✦</div><div class="leaf leaf-two">✳</div>
+  </div>
+</section>
+<section class="impact-strip" id="impact"><div><strong id="statDonations">3</strong><span>donations listed</span></div><div><strong id="statAvailable">3</strong><span>available now</span></div><div><strong>1</strong><span>shared community</span></div><div class="strip-note">A little less waste. <b>A lot more care.</b></div></section>
+<section class="discover section" id="discover">
+  <div class="section-head"><div><div class="eyebrow">THE COMMUNITY FRIDGE</div><h2>Food waiting for <em>you.</em></h2><p>Explore fresh surplus food shared by local donors.</p></div><div class="filter-wrap"><input id="searchInput" type="search" placeholder="Search food or location…" aria-label="Search food or location"><select id="categoryFilter" aria-label="Filter category"><option value="all">All categories</option><option>Prepared meals</option><option>Bakery</option><option>Fruits</option><option>Vegetables</option><option>Groceries</option></select></div></div>
+  <div class="food-grid" id="foodGrid"><div class="loading">Loading community donations…</div></div>
+  <div class="empty-state hidden" id="emptyState"><span>🍃</span><h3>No food found</h3><p>Try another search or check back later.</p></div>
+</section>
+<section class="how-section section" id="how"><div class="eyebrow">THREE SIMPLE STEPS</div><h2>Good things happen <em>in a loop.</em></h2><div class="steps"><article><span class="step-num">01</span><div class="step-icon">🥕</div><h3>Share surplus</h3><p>Restaurants, shops and households list safe, fresh food they won't use.</p></article><article><span class="step-num">02</span><div class="step-icon">🤝</div><h3>Find & claim</h3><p>Community groups discover available donations and reserve what they need.</p></article><article><span class="step-num">03</span><div class="step-icon">💚</div><h3>Pass it on</h3><p>Collect the food, share it with care, and keep good food in circulation.</p></article></div></section>
+<section class="cta"><div><div class="eyebrow">YOUR COMMUNITY NEEDS YOU</div><h2>Have extra? <em>Share good.</em></h2><p>Turn surplus into something meaningful today.</p></div><button class="btn btn-dark" id="openDonateCta">Start a donation <span>↗</span></button></section>
+</main>
+<footer><a class="brand" href="#"><span class="brand-mark">↻</span> foodloop<span class="brand-dot">.</span></a><span>Designed for a world with less food waste.</span><span>Made with care <b>♥</b></span></footer>
+
+<div class="modal-backdrop hidden" id="donateModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+ <div class="modal"><button class="modal-close" id="closeModal" aria-label="Close">×</button><div class="eyebrow">MAKE A DIFFERENCE</div><h2 id="modalTitle">Share some <em>good.</em></h2><p class="modal-intro">Add the details so a local community group can collect your surplus food.</p>
+ <form id="donationForm">
+  <div class="form-grid"><label>Food name *<input name="foodName" required maxlength="90" placeholder="e.g. Vegetable rice boxes"></label>
+  <label>Category *<select name="category" required><option value="Prepared meals">Prepared meals</option><option>Bakery</option><option>Fruits</option><option>Vegetables</option><option>Groceries</option><option>Other</option></select></label>
+  <label>Quantity *<input name="quantity" required maxlength="50" placeholder="e.g. 10 meal boxes"></label>
+  <label>Donor / organization *<input name="donorName" required maxlength="80" placeholder="e.g. Green Leaf Kitchen"></label>
+  <label class="full">Pickup location *<input name="location" required maxlength="160" placeholder="Area, city"></label>
+  <label>Pickup time<input name="pickupTime" placeholder="e.g. Today, 7 PM"></label>
+  <label>Use before<input name="expiryTime" placeholder="e.g. Today, 9 PM"></label>
+  <label class="full">Notes<textarea name="notes" rows="2" maxlength="350" placeholder="Packing details, allergens, storage notes…"></textarea></label></div>
+  <div class="form-warning">Please list only food that has been safely stored and is suitable for consumption.</div>
+  <div class="form-actions"><button type="button" class="btn btn-light" id="cancelDonate">Cancel</button><button type="submit" class="btn btn-green" id="submitDonation">Publish donation ↗</button></div>
+  <p class="form-message" id="formMessage" aria-live="polite"></p>
+ </form></div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="/js/app.js"></script>
+</body></html>
