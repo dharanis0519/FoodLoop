@@ -92,5 +92,3 @@ FoodLoop/
 - Add MySQL/JPA persistence, authentication, and collection confirmation before using this for real donations.
 - Use only safe, properly stored food; the platform does not inspect or certify food safety.
 
-## GitHub
-Suggested repository description: `FoodLoop — a Spring Boot surplus food donation demo with a responsive HTML/CSS/JavaScript frontend and REST API.`
